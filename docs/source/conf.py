@@ -16,9 +16,9 @@ print(parent)
 sys.path.insert(0, str(parent))
 
 project = 'DFIR-IRIS Client'
-copyright = '2023, DFIR-IRIS Team'
+copyright = '2024, DFIR-IRIS Team'
 author = 'DFIR-IRIS Team'
-release = '2.0.0'
+release = '2.0.4'
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration

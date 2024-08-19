@@ -1,24 +1,28 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en">
 <head>
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Session &mdash; DFIR-IRIS Client 2.0.0 documentation</title>
-      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <title>Session &mdash; DFIR-IRIS Client 2.0.4 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css" />
+
+  
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
         <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="_static/doctools.js"></script>
-        <script src="_static/sphinx_highlight.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Case" href="case.html" />
-    <link rel="prev" title="Welcome to Client’s documentation!" href="index.html" /> 
+    <link rel="prev" title="Welcome to IRIS Client’s documentation!" href="index.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -41,22 +45,13 @@
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Session</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#dfir_iris_client.session.API_VERSION"><code class="docutils literal notranslate"><span class="pre">API_VERSION</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="#dfir_iris_client.session.ClientSession"><code class="docutils literal notranslate"><span class="pre">ClientSession</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#dfir_iris_client.session.ClientSession.pi_get"><code class="docutils literal notranslate"><span class="pre">ClientSession.pi_get()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#dfir_iris_client.session.ClientSession.pi_post"><code class="docutils literal notranslate"><span class="pre">ClientSession.pi_post()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#dfir_iris_client.session.ClientSession.pi_post_files"><code class="docutils literal notranslate"><span class="pre">ClientSession.pi_post_files()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#dfir_iris_client.session.ClientSession.preload_base_objects"><code class="docutils literal notranslate"><span class="pre">ClientSession.preload_base_objects()</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#dfir_iris_client.session.log"><code class="docutils literal notranslate"><span class="pre">log</span></code></a></li>
-</ul>
-</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Session</a></li>
 <li class="toctree-l1"><a class="reference internal" href="case.html">Case</a></li>
 <li class="toctree-l1"><a class="reference internal" href="admin.html">Administration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="customer.html">Customers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="global_search.html">Global search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="users.html">Users</a></li>
+<li class="toctree-l1"><a class="reference internal" href="helpers.html">Helpers</a></li>
 </ul>
 
         </div>
@@ -87,7 +82,7 @@
 <span id="session"></span><h1>Session<a class="headerlink" href="#module-dfir_iris_client.session" title="Permalink to this heading"></a></h1>
 <dl class="py data">
 <dt class="sig sig-object py" id="dfir_iris_client.session.API_VERSION">
-<span class="sig-prename descclassname"><span class="pre">dfir_iris_client.session.</span></span><span class="sig-name descname"><span class="pre">API_VERSION</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'2.0.0'</span></em><a class="headerlink" href="#dfir_iris_client.session.API_VERSION" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">dfir_iris_client.session.</span></span><span class="sig-name descname"><span class="pre">API_VERSION</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'2.0.4'</span></em><a class="headerlink" href="#dfir_iris_client.session.API_VERSION" title="Permalink to this definition"></a></dt>
 <dd><p>client_session
 Defines a global session, accessible by all classes. client_session is of type ClientSession.</p>
 </dd></dl>
@@ -101,7 +96,7 @@ to the server.</p>
 <p>Returns:</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="dfir_iris_client.session.ClientSession.pi_get">
-<span class="sig-name descname"><span class="pre">pi_get</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">uri</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cid</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">no_wrap</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ApiResponse</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Response</span></span></span><a class="headerlink" href="#dfir_iris_client.session.ClientSession.pi_get" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">pi_get</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">uri</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cid</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">no_wrap</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="helpers.html#dfir_iris_client.helper.utils.ApiResponse" title="dfir_iris_client.helper.utils.ApiResponse"><span class="pre">ApiResponse</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Response</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#dfir_iris_client.session.ClientSession.pi_get" title="Permalink to this definition"></a></dt>
 <dd><p>Adds the CID information needed by the server when issuing GET requests
 and then issue the request itself.</p>
 <dl class="field-list simple">
@@ -120,7 +115,7 @@ and then issue the request itself.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="dfir_iris_client.session.ClientSession.pi_post">
-<span class="sig-name descname"><span class="pre">pi_post</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">uri</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cid</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ApiResponse</span></span></span><a class="headerlink" href="#dfir_iris_client.session.ClientSession.pi_post" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">pi_post</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">uri</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cid</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="helpers.html#dfir_iris_client.helper.utils.ApiResponse" title="dfir_iris_client.helper.utils.ApiResponse"><span class="pre">ApiResponse</span></a></span></span><a class="headerlink" href="#dfir_iris_client.session.ClientSession.pi_post" title="Permalink to this definition"></a></dt>
 <dd><p>Issues a POSt request with the provided data. Simple wrapper around _pi_request</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -138,7 +133,7 @@ and then issue the request itself.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="dfir_iris_client.session.ClientSession.pi_post_files">
-<span class="sig-name descname"><span class="pre">pi_post_files</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">uri</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">files</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cid</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ApiResponse</span></span></span><a class="headerlink" href="#dfir_iris_client.session.ClientSession.pi_post_files" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">pi_post_files</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">uri</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">files</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cid</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="helpers.html#dfir_iris_client.helper.utils.ApiResponse" title="dfir_iris_client.helper.utils.ApiResponse"><span class="pre">ApiResponse</span></a></span></span><a class="headerlink" href="#dfir_iris_client.session.ClientSession.pi_post_files" title="Permalink to this definition"></a></dt>
 <dd><p>Issues a POST request in multipart with the provided data.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -183,14 +178,14 @@ it can handles.</p>
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="index.html" class="btn btn-neutral float-left" title="Welcome to Client’s documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="index.html" class="btn btn-neutral float-left" title="Welcome to IRIS Client’s documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
         <a href="case.html" class="btn btn-neutral float-right" title="Case" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2023, DFIR-IRIS Team.</p>
+    <p>&#169; Copyright 2024, DFIR-IRIS Team.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

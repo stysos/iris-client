@@ -1,18 +1,22 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Index &mdash; DFIR-IRIS Client 2.0.0 documentation</title>
-      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <title>Index &mdash; DFIR-IRIS Client 2.0.4 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css" />
+
+  
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
         <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="_static/doctools.js"></script>
-        <script src="_static/sphinx_highlight.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="#" />
     <link rel="search" title="Search" href="search.html" /> 
@@ -134,6 +138,8 @@
 </li>
       <li><a href="case.html#dfir_iris_client.case.Case.add_note_comment">add_note_comment() (dfir_iris_client.case.Case method)</a>
 </li>
+      <li><a href="case.html#dfir_iris_client.case.Case.add_notes_directory">add_notes_directory() (dfir_iris_client.case.Case method)</a>
+</li>
       <li><a href="case.html#dfir_iris_client.case.Case.add_notes_group">add_notes_group() (dfir_iris_client.case.Case method)</a>
 </li>
       <li><a href="admin.html#dfir_iris_client.admin.AdminHelper.add_report_template">add_report_template() (dfir_iris_client.admin.AdminHelper method)</a>
@@ -233,6 +239,8 @@
       <li><a href="case.html#dfir_iris_client.case.Case.delete_note">delete_note() (dfir_iris_client.case.Case method)</a>
 </li>
       <li><a href="case.html#dfir_iris_client.case.Case.delete_note_comment">delete_note_comment() (dfir_iris_client.case.Case method)</a>
+</li>
+      <li><a href="case.html#dfir_iris_client.case.Case.delete_notes_directory">delete_notes_directory() (dfir_iris_client.case.Case method)</a>
 </li>
       <li><a href="case.html#dfir_iris_client.case.Case.delete_notes_group">delete_notes_group() (dfir_iris_client.case.Case method)</a>
 </li>
@@ -421,6 +429,10 @@
 </li>
       <li><a href="customer.html#dfir_iris_client.customer.Customer.get_customer_by_id">get_customer_by_id() (dfir_iris_client.customer.Customer method)</a>
 </li>
+      <li><a href="helpers.html#dfir_iris_client.helper.utils.get_data">get_data() (in module dfir_iris_client.helper.utils)</a>
+</li>
+      <li><a href="helpers.html#dfir_iris_client.helper.utils.ApiResponse.get_data_field">get_data_field() (dfir_iris_client.helper.utils.ApiResponse method)</a>
+</li>
       <li><a href="helpers.html#dfir_iris_client.helper.utils.get_data_from_resp">get_data_from_resp() (in module dfir_iris_client.helper.utils)</a>
 </li>
       <li><a href="case.html#dfir_iris_client.case.Case.get_ds_file_info">get_ds_file_info() (dfir_iris_client.case.Case method)</a>
@@ -444,6 +456,8 @@
       <li><a href="helpers.html#dfir_iris_client.helper.utils.get_iris_session">get_iris_session() (in module dfir_iris_client.helper.utils)</a>
 </li>
       <li><a href="case.html#dfir_iris_client.case.Case.get_note">get_note() (dfir_iris_client.case.Case method)</a>
+</li>
+      <li><a href="case.html#dfir_iris_client.case.Case.get_notes_directory">get_notes_directory() (dfir_iris_client.case.Case method)</a>
 </li>
       <li><a href="case.html#dfir_iris_client.case.Case.get_notes_group">get_notes_group() (dfir_iris_client.case.Case method)</a>
 </li>
@@ -552,6 +566,8 @@
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="case.html#dfir_iris_client.case.Case.list_note_comments">list_note_comments() (dfir_iris_client.case.Case method)</a>
+</li>
+      <li><a href="case.html#dfir_iris_client.case.Case.list_notes_directories">list_notes_directories() (dfir_iris_client.case.Case method)</a>
 </li>
       <li><a href="case.html#dfir_iris_client.case.Case.list_notes_groups">list_notes_groups() (dfir_iris_client.case.Case method)</a>
 </li>
@@ -752,10 +768,10 @@
 </li>
       <li><a href="admin.html#dfir_iris_client.admin.AdminHelper.update_group">update_group() (dfir_iris_client.admin.AdminHelper method)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="admin.html#dfir_iris_client.admin.AdminHelper.update_group_cases_access">update_group_cases_access() (dfir_iris_client.admin.AdminHelper method)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="admin.html#dfir_iris_client.admin.AdminHelper.update_group_members">update_group_members() (dfir_iris_client.admin.AdminHelper method)</a>
 </li>
       <li><a href="case.html#dfir_iris_client.case.Case.update_ioc">update_ioc() (dfir_iris_client.case.Case method)</a>
@@ -767,6 +783,8 @@
       <li><a href="case.html#dfir_iris_client.case.Case.update_note">update_note() (dfir_iris_client.case.Case method)</a>
 </li>
       <li><a href="case.html#dfir_iris_client.case.Case.update_note_comment">update_note_comment() (dfir_iris_client.case.Case method)</a>
+</li>
+      <li><a href="case.html#dfir_iris_client.case.Case.update_notes_directory">update_notes_directory() (dfir_iris_client.case.Case method)</a>
 </li>
       <li><a href="case.html#dfir_iris_client.case.Case.update_notes_group">update_notes_group() (dfir_iris_client.case.Case method)</a>
 </li>
@@ -794,7 +812,7 @@
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2023, DFIR-IRIS Team.</p>
+    <p>&#169; Copyright 2024, DFIR-IRIS Team.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
