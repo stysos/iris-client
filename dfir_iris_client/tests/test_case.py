@@ -111,7 +111,7 @@ class CaseTest(InitIrisClientTest):
 
     def test_set_case_outcome_status(self):
         """ Test set case outcome status """
-        ret = self.case.set_case_outcome_status("true positive")
+        ret = self.case.set_case_outcome_status("true positive with impact")
         assert bool(assert_api_resp(ret)) is True
 
     def test_add_case_with_faulty_customer_name(self):
@@ -654,7 +654,7 @@ class CaseTest(InitIrisClientTest):
         assert bool(assert_api_resp(ret)) is False
         data = get_data_from_resp(ret)
         ioc_type = parse_api_data(data, 'ioc_type_id')
-        assert 'Invalid ioc type ID' in ioc_type
+        assert 'Invalid IOC type ID' in ioc_type or 'Invalid data - max value exceeded' in ioc_type
 
     def test_add_ioc_partial_invalid_ioc_tlp(self):
         """ """
@@ -667,7 +667,7 @@ class CaseTest(InitIrisClientTest):
         assert bool(assert_api_resp(ret)) is False
         data = get_data_from_resp(ret)
         ioc_type = parse_api_data(data, 'ioc_tlp_id')
-        assert 'Invalid TLP ID' in ioc_type[0]
+        assert 'Invalid TLP ID' in ioc_type[0] or 'Invalid data - max value exceeded' in ioc_type[0]
 
     def test_update_ioc_full_valid(self):
         """ """
@@ -714,7 +714,7 @@ class CaseTest(InitIrisClientTest):
         assert bool(assert_api_resp(ret)) is False
         data = get_data_from_resp(ret)
         ioc_type = parse_api_data(data, 'ioc_type_id')
-        assert 'Invalid ioc type ID' in ioc_type
+        assert 'Invalid IOC type ID' in ioc_type or 'Invalid data - max value exceeded' in ioc_type
 
         ret = self.case.delete_ioc(ioc_id=ioc_id)
         assert assert_api_resp(ret, soft_fail=False)
@@ -737,7 +737,7 @@ class CaseTest(InitIrisClientTest):
         assert bool(assert_api_resp(ret)) is False
         data = get_data_from_resp(ret)
         ioc_type = parse_api_data(data, 'ioc_tlp_id')
-        assert 'Invalid TLP ID' in ioc_type[0]
+        assert 'Invalid TLP ID' in ioc_type[0] or 'Invalid data - max value exceeded' in ioc_type[0]
 
         ret = self.case.delete_ioc(ioc_id=ioc_id)
         assert assert_api_resp(ret, soft_fail=False)
@@ -1313,7 +1313,7 @@ class CaseTest(InitIrisClientTest):
             assert type(parse_api_data(evidence, 'filename')) is str
             assert type(parse_api_data(evidence, 'file_size')) is int
             assert type(parse_api_data(evidence, 'id')) is int
-            assert type(parse_api_data(evidence, 'username')) is str
+            assert type(parse_api_data(evidence, 'user')) is dict
 
     def test_add_evidence_full_valid(self):
         """ """
